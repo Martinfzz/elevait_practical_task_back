@@ -10,6 +10,7 @@ class DocumentsController < ApplicationController
 
   # GET /documents/1 or /documents/1.json
   def show
+    render json: @document
   end
 
   # POST /documents or /documents.json
