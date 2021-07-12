@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_12_132136) do
+ActiveRecord::Schema.define(version: 2021_07_12_132308) do
 
   create_table "documents", force: :cascade do |t|
     t.string "title"
@@ -18,6 +18,15 @@ ActiveRecord::Schema.define(version: 2021_07_12_132136) do
     t.datetime "dateCreated"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "pages", force: :cascade do |t|
+    t.integer "pageNr"
+    t.string "text"
+    t.integer "document_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["document_id"], name: "index_pages_on_document_id"
   end
 
 end
