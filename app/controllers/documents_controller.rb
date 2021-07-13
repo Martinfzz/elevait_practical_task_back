@@ -10,7 +10,8 @@ class DocumentsController < ApplicationController
 
   # GET /documents/1 or /documents/1.json
   def show
-    render json: @document
+    @document_pages = Document.find(params[:id]).pages
+    render json: {document: @document, pages: @document_pages}
   end
 
   # POST /documents or /documents.json
