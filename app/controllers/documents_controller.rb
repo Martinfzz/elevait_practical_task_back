@@ -1,5 +1,5 @@
 class DocumentsController < ApplicationController
-  before_action :set_document, only: %i[ show update destroy ]
+  before_action :set_document, only: %i[ show ]
   skip_before_action :verify_authenticity_token
 
   # GET /documents or /documents.json
@@ -20,24 +20,6 @@ class DocumentsController < ApplicationController
 
     if @document.save
       render json: @document, status: :created, location: @document
-    else
-      render json: @document.errors, status: :unprocessable_entity
-    end
-  end
-
-  # PATCH/PUT /documents/1 or /documents/1.json
-  def update
-    if @document.update(document_params)
-      render json: @document
-    else
-      render json: @document.errors, status: :unprocessable_entity
-    end
-  end
-
-  # DELETE /documents/1 or /documents/1.json
-  def destroy
-    if @document.destroy
-      render json: {message: "Document destroyed"}
     else
       render json: @document.errors, status: :unprocessable_entity
     end
