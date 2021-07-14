@@ -58,7 +58,7 @@ RSpec.describe Document, type: :model do
 
     describe "document" do
       it "should have_many pages" do
-        page = Page.create(text: "test", document_id: @document.id)
+        page = Page.create(pageNr: 1, text: "test", document_id: @document.id)
         expect(@document.pages.include?(page)).to eq(true)
       end
     end
@@ -74,7 +74,6 @@ RSpec.describe Document, type: :model do
       end
 
       it "should return the title" do
-        @document = Document.create(title: "This is a title", author: "Martin Forget", dateCreated: "2021-07-12")
         expect(@document.title).to eq("This is a title")
         document_2 = Document.create(title: "This is another title", author: "Martin Forget", dateCreated: "2021-07-12")
         expect(document_2.title).to eq("This is another title")
@@ -88,7 +87,6 @@ RSpec.describe Document, type: :model do
       end
 
       it "should return the author" do
-        @document = Document.create(title: "This is a title", author: "Martin Forget", dateCreated: "2021-07-12")
         expect(@document.author).to eq("Martin Forget")
         document_2 = Document.create(title: "This is a title", author: "Martin Forget II", dateCreated: "2021-07-12")
         expect(document_2.author).to eq("Martin Forget II")
@@ -98,7 +96,6 @@ RSpec.describe Document, type: :model do
     describe "#dateCreated" do
 
       it "should return the date" do
-        @document = Document.create(title: "This is a title", author: "Martin Forget", dateCreated: "2021-07-12")
         expect(@document.dateCreated.strftime("%F")).to eq("2021-07-12")
         document_2 = Document.create(title: "This is a title", author: "Martin Forget", dateCreated: "2023-02-21")
         expect(document_2.dateCreated.strftime("%F")).to eq("2023-02-21")
