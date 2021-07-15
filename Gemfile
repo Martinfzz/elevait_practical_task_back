@@ -40,6 +40,7 @@ group :development do
   gem 'listen', '~> 3.3'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+  gem 'rspec-rails', '~> 5.0.0'
 end
 
 group :test do
@@ -48,6 +49,7 @@ group :test do
   gem 'selenium-webdriver'
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'
+  gem 'rspec-rails', '~> 5.0.0'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
@@ -61,3 +63,4 @@ gem 'pry'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 gem 'sprockets', '~> 3.0'
+gem 'rack-cors'
