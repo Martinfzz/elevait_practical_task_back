@@ -66,7 +66,7 @@ See Rails Guides for more information on how to install Ruby on Rails & Ruby : [
 
 1. Clone the repo
 ```sh
-  git clone https://github.com/Martinfzz/elevait_practical_task_back
+  git clone https://github.com/Martinfzz/elevait_practical_task_back.git
 ```
 2. Install Gemfile bundle
 ```sh
